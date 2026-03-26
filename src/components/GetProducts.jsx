@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import Carousel from './Carousel'
+import Footer from './Footer'
 
 const GetProduct = () => {
   const [products,setProducts]=useState([])
@@ -56,6 +57,7 @@ const GetProduct = () => {
           </div>
         ))}
     </div>
+    <Footer/>
     </div>
   )
 }
