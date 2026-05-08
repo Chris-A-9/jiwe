@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <>
-            <section className="row bg-success text-light p-4 mt-4">
+            <section className="row bg-warning text-light p-4 mt-4">
 
                 {/* About */}
                 <div className="col-md-4">
@@ -62,20 +62,20 @@ const Footer = () => {
                         <img src="/images/x.png" alt="X" width="40" />
                     </a>
 
-                    <p className="mt-3">
+                    <p className="mt-3 background color-">
                         We are found on all platforms @wyckrisproduct.com. Follow us and stay updated
                         on the latest trends.
                     </p>
 
                     <p>Thank you for viewing our page</p>
 
-                    <a href="https://www.whatsapp.com">
-                        <img 
-                            src="/images/whatsapp.png" 
-                            alt="WhatsApp" 
-                            height="80" 
-                        />
-                    </a>
+                         <a href="https://www.whatsapp.com">
+  <img
+    src="/images/whatsap.webp"
+    height="80"
+    alt="WhatsApp"
+  />
+</a>
 
                     <div className="btn btn-success mt-2">
                         0768942225

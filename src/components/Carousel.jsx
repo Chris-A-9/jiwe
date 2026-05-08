@@ -22,10 +22,10 @@ const Carousel = () => {
                             <img src="images/slide4.webp" alt="" className="w-100 d-block" height="300px"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="images/slide5.webp" alt="slide 5" className="w-100 d-block" height="300px"/>
+                            <img src="images/tisho.png" alt="slide 5" className="w-100 d-block" height="300px"/>
                         </div>
                         <div className="carousel-item">
-                            <img src="images/slide6.jpg" alt="slide 6" className="w-100 d-block" height="300px"/>
+                            <img src="images/tishoo.png" alt="slide 6" className="w-100 d-block" height="300px"/>
 
                         </div>
                     </div>

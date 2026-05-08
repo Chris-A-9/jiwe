@@ -56,7 +56,7 @@ const Signup = () => {
 
 
     return (
-        <div>
+        <div style={{ backgroundColor: "#e6ab0cff", minHeight: "100vh", padding: "20px" }}>
             <Navbar/>
             <div className="row mt-4 justify-content-center">
                 <div className="col-md-6 card shadow p-3 text-center">

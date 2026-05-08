@@ -47,8 +47,8 @@ const MakePayment = () => {
                 <div className="card shadow">
                     <img src={img_url + product.product_photo} alt="" className='product_img' />
                     <div className="card-body">
-                        <p className='text-muted'>Product Name:{product.product_name}</p>
-                        <p className='text-muted'>Product Desc:{product.product_description}</p>
+                        <p className='text-'>Product Name:{product.product_name}</p>
+                        <p className='text-'>Product Desc:{product.product_description}</p>
                         <p className='text-warning'>Cost:KSH {product.product_cost}</p>
                         <form onSubmit={submit}>
                             <p className='text-start text-primary'>Phone number to make payment</p>
