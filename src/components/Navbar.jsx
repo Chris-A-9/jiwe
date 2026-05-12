@@ -36,7 +36,7 @@ const Navbar = () => {
                             to={"/"}
                             className='navbar-brand fw-bold'
                         >
-                            SokoGarden
+                            Jiwe
                         </Link>
 
                         {/* TOGGLER */}

@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { useCart } from '../CartContext'
+import { useNavigate } from 'react-router-dom'
 
 const CartPage = () => {
 
@@ -12,6 +13,7 @@ const CartPage = () => {
     decreaseQty,
     totalPrice
   } = useCart()
+  const navigate = useNavigate()
 
   const img_url =
     "https://bigmich59.alwaysdata.net/static/images/"
@@ -137,17 +139,32 @@ const CartPage = () => {
 
             ))}
 
-            {/* TOTAL */}
-            <div className="text-end mt-4">
+           {/* TOTAL */}
+      <div className="text-end mt-4">
 
-              <h2 className="text-dark">
-                Total Price:
-                <span className="text-success">
-                  {" "}Ksh {totalPrice}
-                </span>
-              </h2>
+        <h2 className="text-dark">
+          Total Price:
+         <span className="text-success">
+          {" "}Ksh {totalPrice}
+        </span>
+      </h2>
 
-            </div>
+          {/* PROCEED TO CHECKOUT BUTTON */}
+        <button
+  className="btn btn-success btn-lg mt-2"
+  onClick={() =>
+    navigate("/makepayment", {
+      state: {
+        cart,
+        totalPrice
+      }
+    })
+  }
+>
+  Proceed to Checkout
+</button>
+
+          </div>
 
           </div>
 
