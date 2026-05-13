@@ -1,0 +1,49 @@
+/* Default Light Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-color: #f8f9fa;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #1e1e1e;
+}
+
+/* Apply theme globally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* Main containers */
+.container,
+.card,
+.navbar,
+.form-control,
+input,
+textarea,
+select {
+  background-color: var(--card-color) !important;
+  color: var(--text-color) !important;
+  transition: 0.3s ease;
+}
+
+/* Inputs */
+input::placeholder,
+textarea::placeholder {
+  color: gray !important;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+}
+
+/* Buttons */
+button {
+  transition: 0.3s ease;
+}

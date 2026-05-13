@@ -4,16 +4,17 @@ import { useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 
 const MakePayment = () => {
-    // destructure data passed to this component
-    // extracting/retrieveing product that has been passed for payment
-    const { product } = useLocation().state || {}
+    const { cart, totalPrice } = useLocation().state || {}
+
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
     const [error, setError] = useState("")
-    // img url
-    const img_url = "https://bigmich59.alwaysdata.net/static/images/"
 
-    console.log(product)
+    const img_url =
+      "https://bigmich59.alwaysdata.net/static/images/"
+
+    console.log(cart)
+    console.log(totalPrice)
 
     const submit = async (e) => {
         e.preventDefault()
@@ -23,7 +24,7 @@ const MakePayment = () => {
         try {
             const data = new FormData()
             data.append("phone", phone)
-            data.append("amount", product.product_cost)
+            data.append("amount", totalPrice)
 
             const response = await axios.post("https://bigmich59.alwaysdata.net/api/mpesa_payment", data)
             console.log(response)
@@ -45,11 +46,44 @@ const MakePayment = () => {
             <h6 className='text-danger'>{error}</h6>
             <div className="col-md-6">
                 <div className="card shadow">
-                    <img src={img_url + product.product_photo} alt="" className='product_img' />
                     <div className="card-body">
-                        <p className='text-muted'>Product Name:{product.product_name}</p>
-                        <p className='text-muted'>Product Desc:{product.product_description}</p>
-                        <p className='text-warning'>Cost:KSH {product.product_cost}</p>
+
+    <h3 className='text-primary'>
+        Total Cart Payment
+    </h3>
+
+    {cart?.map((item) => (
+        <div
+            key={item.product_id}
+            className='border rounded p-2 mb-2'
+        >
+            <img
+                src={img_url + item.product_photo}
+                alt=""
+                width="120"
+                className='img-fluid rounded'
+            />
+
+            <p>
+                Product Name:
+                {item.product_name}
+            </p>
+
+            <p>
+                Quantity:
+                {item.qty}
+            </p>
+
+            <p className='text-warning'>
+                Cost:
+                KSH {item.product_cost}
+            </p>
+        </div>
+    ))}
+
+    <h4 className='text-success'>
+        Total Amount: KSH {totalPrice}
+    </h4>
                         <form onSubmit={submit}>
                             <p className='text-start text-primary'>Phone number to make payment</p>
                             <input type='tel' placeholder='254...' className='form-control' value={phone} required onChange={(e) => setPhone(e.target.value)} /> <br />

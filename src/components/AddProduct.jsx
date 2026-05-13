@@ -11,6 +11,7 @@ const AddProduct = () => {
     const [loading, setLoading] = useState("")
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
+    
 
     const submit = async (e) => {
         e.preventDefault()
@@ -39,7 +40,7 @@ const AddProduct = () => {
 
     }
   return (
-    <div>
+    <div style={{ backgroundColor: "#e6ab0cff", minHeight: "100vh", padding: "20px" }}>
         <Navbar/>
          <div className="row justify-content-center mt-5">
             <div className="card shadow col-md-6 p-5 text-center">
